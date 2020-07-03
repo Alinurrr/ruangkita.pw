@@ -10,7 +10,7 @@
 
          $id_ruangan = $_GET['id_ruangan'];
 
-         $QueryFounder = mysqli_query($koneksi, "SELECT * FROM tb_ruangan r, tb_user u WHERE r.id_founder = u.id_user");
+         $QueryFounder = mysqli_query($koneksi, "SELECT * FROM tb_ruangan r, tb_user u WHERE r.id_founder = u.id_user AND id_ruangan='$id_ruangan'");
          $pro = mysqli_fetch_array($QueryFounder);
 
          ?>

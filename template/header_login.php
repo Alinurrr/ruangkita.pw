@@ -53,43 +53,22 @@ include "lib/config.php";
 			</div>
 		</div>
 	</div>
+
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 		<div class="container">
-			<a class="navbar-brand" href="index.php"><i class="fa fa-home" aria-hidden="true"></i> Ruang<span>Kita</span></a>
+			<a class="navbar-brand" href="login_index.php"><i class="fa fa-home" aria-hidden="true"></i> Ruang<span>Kita</span></a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="fa fa-bars"></span> Menu
 			</button>
 			<div class="collapse navbar-collapse" id="ftco-nav">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
+					<li class="nav-item"><a href="login_index.php" class="nav-link">Home</a></li>
 					<li class="nav-item"><a href="index_booking.php" class="nav-link">Daftar Ruangan</a></li>
-					<li class="nav-item"><a href="index_booking.php" class="nav-link">Booking Ruangan</a></li>
-
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Kategori
-						</a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="#">Gedung</a>
-							<a class="dropdown-item" href="#">Kafe</a>
-							<a class="dropdown-item" href="#">Pegunungan</a>
-							<a class="dropdown-item" href="#">Pedesaan</a>
-							<a class="dropdown-item" href="#">Pesisir Laut</a>
-						</div>
-					</li>
-					<!-- ----- -->
-					<li class="nav-item">
-						<a href="<?= $admin_url ?>" class="btn btn-primary mt-4 mr-1 px-4 py-3">Masuk</a>
-					</li>
-					<li class="nav-item">
-						<a href="<?= $admin_url; ?>/register.php" class="btn btn-primary btn-outline-primary mt-4 ml-1 px-4 py-3">Daftar</a>
-					</li>
-
+					<li class="nav-item"><a href="#" class="nav-link">Akun &ensp; <i class="fa fa-user-circle-o" aria-hidden="true"></i></a></li>
 					<!-- <li class="nav-item"><a href="asset/services.html" class="nav-link">Services</a></li>
 					<li class="nav-item"><a href="asset/rooms.html" class="nav-link">Ruang Meeting</a></li>
 					<li class="nav-item"><a href="asset/contact.html" class="nav-link">Contact</a></li>
-					<li class="nav-item"><a href="asset/contact.html" class="nav-link">Register</a></li>
-					<li class="nav-item"><a href="asset/contact.html" class="nav-link">Akun &ensp; <i class="fa fa-user-circle-o" aria-hidden="true"></i></a></li> -->
+					<li class="nav-item"><a href="asset/contact.html" class="nav-link">Register</a></li> -->
 
 				</ul>
 			</div>

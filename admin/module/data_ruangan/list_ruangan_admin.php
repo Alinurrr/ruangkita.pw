@@ -32,6 +32,7 @@ include "../lib/koneksi.php";
             <table class="table table-striped">
               <thead>
                 <tr>
+                  <th> Nomor </th>
                   <th> Nama Ruangan </th>
                   <th> Gambar </th>
                   <th> Pemilik </th>
@@ -40,12 +41,15 @@ include "../lib/koneksi.php";
               </thead>
               <tbody>
                 <?php
+                $nomor = 1;
                 include "../lib/config.php";
                 include "../lib/koneksi.php";
                 $QueryFounder = mysqli_query($koneksi, "SELECT * FROM tb_ruangan r, tb_user u WHERE r.id_founder = u.id_user");
                 while ($pro = mysqli_fetch_array($QueryFounder)) {
                 ?>
                   <tr>
+                    <td><?php echo $nomor; ?></td>
+                    <?php $nomor++ ?>
                     <td><?php echo $pro['nama_ruangan']; ?></td>
                     <td>
                       <img src="upload/<?= $pro['gambar']; ?>" class="img" height="100" width="100">

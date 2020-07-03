@@ -41,7 +41,17 @@
                      <td>
                        <img src="upload/<?= $pro['gambar']; ?>" class="thumb-image" height="100" width="100">
                      </td>
-                     <td><?php echo $pro['alamat']; ?></td>
+                     <td>
+                       <?php
+                        if (str_word_count($pro['alamat']) > 1) {
+                          $potongan = substr($pro['alamat'], 0, 80) . "[..]";
+                          echo $potongan;
+                        } else {
+                          echo $pro['alamat'];
+                        }
+                        ?>
+                       <!-- <?php echo $pro['alamat']; ?> -->
+                     </td>
                      <td>
 
                        <a href="<?php echo $admin_url; ?>adminfounder.php?module=detail_ruangan&id_ruangan=<?php echo $pro['id_ruangan']; ?>" class="btn btn-outline-primary">

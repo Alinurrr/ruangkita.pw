@@ -210,7 +210,7 @@
                 </p>
 
 
-                <p><a href="#" class="btn btn-primary">Selengkapnya</a></p>
+                <p style="float: right"><a href="<?php echo $base_url; ?>index_detail_ruangan.php?id_ruangan=<?php echo $r['id_ruangan']; ?>" class="btn btn-primary">Detail</a></p>
               </div>
 
             </div>

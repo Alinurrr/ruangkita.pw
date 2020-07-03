@@ -29,8 +29,13 @@
                      </div>
                      <div class="form-group ">
                         <label for="ukuran">Ukuran</label>
-                        <code>*dalam satuan m2</code>
-                        <input type="text" class="form-control" id="ukuran" name="ukuran" placeholder="999">
+                        <select class="form-control" id="kapasitas" name="ukuran">
+                           <option value="10">10 orang</option>
+                           <option value="20">20 orang</option>
+                           <option value="30">30 orang</option>
+                           <option value="40">40 orang</option>
+                           <option value="50">50 orang</option>
+                        </select>
                      </div>
                      <div class="form-group">
                         <label for="kapasitas">Kapasitas Max Ruangan</label>

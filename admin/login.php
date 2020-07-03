@@ -23,7 +23,7 @@ if ($ketemu > 0) {
     } else if ($status == 2) {
         header('location:adminfounder.php?module=home');
     } else {
-        header('Location: ../index.php');
+        header('Location: ../login_index.php');
     }
 } else {
     echo "<center>LOGIN GAGAL! <br>
