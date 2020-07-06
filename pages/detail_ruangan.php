@@ -89,6 +89,14 @@
              </div>
            </div>
          </div>
+
+
+         <div class="row no-gutters">
+           <div class="col-md-12 wrap-about">
+             <a href="<?php echo $base_url; ?>index_booking.php?id_ruangan=<?php echo $r['id_ruangan']; ?>" class="btn btn-primary btn-lg btn-block">Booking Ruangan</a>
+           </div>
+         </div>
+       </div>
        </div>
      </section>
    <?php } ?>

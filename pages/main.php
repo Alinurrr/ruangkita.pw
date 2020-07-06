@@ -171,7 +171,7 @@
         while ($r = mysqli_fetch_array($q)) {
         ?>
 
-          <div class="col-md-4 d-flex services align-self-stretch px-4 ftco-animate">
+          <div class="col-md-4 mb-3 d-flex services align-self-stretch px-4 ftco-animate">
             <div class="d-block services-wrap text-center">
 
 

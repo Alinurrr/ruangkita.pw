@@ -34,7 +34,7 @@
           <div class="col-lg-4 mx-auto">
             <h2 class="text-center mb-4">Register</h2>
             <div class="auto-form-wrapper">
-              <form action="../admin/module/register/simpan_register.php" method="post">
+              <form action="module/register/simpan_register.php" method="post">
                 <div class="form-group">
                   <div class="input-group">
                     <input type="text" class="form-control" placeholder="Nama Lengkap" name="Nama">
