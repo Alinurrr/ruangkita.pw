@@ -67,6 +67,7 @@ include "../lib/koneksi.php";
                       <?php } ?>
                     </td>
                     <td>
+                      
                       <a href="<?php echo $admin_url; ?>adminweb.php?module=edit_user&id_user=<?php echo $pro['id_user']; ?>" class="btn btn-icons btn-inverse-primary">
                         <i class="mdi mdi-file-document"></i></button></a>
                       <a href="<?php echo $admin_url; ?>module/data_user/aksi_hapus.php?id_user=<?php echo $pro['id_user']; ?>" class="btn btn-icons btn-inverse-danger">

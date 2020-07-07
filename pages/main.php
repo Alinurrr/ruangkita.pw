@@ -205,6 +205,9 @@
                     <font color="#fa6e83"><b> kapasitas: </b></font>
                   </span> <?php echo ($r['kapasitas']) ?> orang <br>
                   <span>
+                    <font color="#fa6e83"><b> harga: </b></font>
+                  </span>Rp. <?php echo ($r['harga']) ?> /hari<br>
+                  <span>
                     <font color="#fa6e83"><b> alamat: </b></font>
                   </span> <?php echo ($r['alamat']) ?>
                 </p>

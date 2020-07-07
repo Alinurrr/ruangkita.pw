@@ -2,6 +2,10 @@
 
 $id_ruangan = $_POST['id_ruangan'];
 $tgl_sewa = $_POST['tgl_sewa'];
+$name = $_POST['name'];
+$email = $_POST['email'];
+$telp = $_POST['telp'];
+$metode_pembayaran = $_POST['metode_pembayaran'];
 $q = mysqli_query($koneksi, "SELECT * FROM tb_ruangan r, tb_user u WHERE r.id_founder = u.id_user AND id_ruangan='$id_ruangan'");
 
 while ($r = mysqli_fetch_array($q)) {
@@ -9,83 +13,118 @@ while ($r = mysqli_fetch_array($q)) {
 
 	<section class="ftco-section bg-light">
 		<div class="container">
-			<div class="card">
-				<h5 class="card-header">Pesanan Anda</h5>
-				<div class="card-body">
-					<p class="card-text">Lanjutkan sebagai tamu di bawah. Anda bisa masuk dengan akun RuangKita untuk kemudahan akses dan lainnya.</p>
-					<a href="admin/" class="btn btn-primary">Masuk</a>
-				</div>
-			</div>
+
 
 			<div class="row mt-3 no-gutters">
 				<div class="col-md-6 mr-5 wrap-about">
-					<div class="img img-2 mb-4" style="background-image: url(admin/upload/<?php echo $r['gambar'] ?>);">
-					</div>
+					<h4 class="d-flex justify-content-between align-items-center mb-3">
+						<span class="text-muted">Rincian Harga</span>
+					</h4>
+					<form class="card p-2" action="aksi_bayar.php" method="POST">
+						<input type="hidden" name="id_ruangan" value="<?php echo $r['id_ruangan']; ?>">
+						<input type="hidden" name="tgl_sewa" value="<?php echo $tgl_sewa; ?>">
+						<input type="hidden" name="name" value="<?php echo $name; ?>">
+						<input type="hidden" name="email" value="<?php echo $email; ?>">
+						<input type="hidden" name="telp" value="<?php echo $telp; ?>">
+						<input type="hidden" name="metode_pembayaran" value="<?php echo $metode_pembayaran; ?>">
+						<ul class="list-group mb-3">
+							<li class="list-group-item d-flex justify-content-between lh-condensed">
+								<div>
+									<h6 class="my-0">Harga Sewa</h6>
+									<small class="text-muted">jam 09.00 - 16.00 WIB</small>
+								</div>
+								<div class="row mt-3">
+									<h6>Rp. <?php echo ($r['harga']) ?></h6>
+								</div>
+
+							</li>
+							<li class="list-group-item d-flex justify-content-between lh-condensed">
+								<div>
+									<h6 class="my-0">Biaya Oprasional</h6>
+								</div>
+								<div class="row mt-3">
+									<h6>Rp. 0,00</h6>
+								</div>
+							</li>
+							<li class="list-group-item d-flex justify-content-between lh-condensed">
+							</li>
+							<input type="hidden" name="id_ruangan" value="<?php echo $r['id_ruangan']; ?>">
+							<li class="list-group-item d-flex justify-content-between lh-condensed">
+								<h6 class="my-0">Total</h6>
+								<div class="form-group row">
+									<h6>Rp. <?php echo ($r['harga']) ?></h6>
+								</div>
+							</li>
+							<li class="list-group-item d-flex justify-content-between lh-condensed">
+								<div class="input-group-append">
+									<button type="submit" class="btn btn-primary btn-lg btn-block">Bayar</button>
+								</div>
+
+							</li>
+						</ul>
+
+
+					</form>
 				</div>
 				<div class="col-md-5 wrap-about ftco-animate">
 
 					<div class="row no-gutters">
-						<div class="contact-wrap w-100 p-md-5 p-4">
-							<h3 class="mb-4" align="center"> Data Kontak Pemesan</h3>
+						<h3 class="mb-4" align="center"> Data Pesanan</h3>
+						<div class="contact-wrap w-100 p-md-3 p-4">
 							<div id="form-message-warning" class="mb-4"></div>
 							<div id="form-message-success" class="mb-4">
 
 							</div>
-							<form method="POST" action="index_pembayaran.php" id="contactForm" name="contactForm" class="contactForm">
-								<input type="hidden" name="id_ruangan" value="<?php echo $r['id_ruangan']; ?>">
-								<input type="hidden" name="tgl_sewa" value="<?php echo $tgl_sewa; ?>">
-								<div class="row">
-									<div class="col-md-12">
-										<div class="form-group">
-											<label class="label" for="name">Nama Lengkap</label>
-											<input type="text" class="form-control" name="name" id="name" placeholder="Name">
-										</div>
+							<div class="card mb-3" style="max-width: 540px;">
+								<div class="row no-gutters">
+									<div class="col-md-6">
+										<img src="admin/upload/<?php echo $r['gambar'] ?>" class="card-img" alt="...">
 									</div>
-									<div class="col-md-12">
-										<div class="form-group">
-											<label class="label" for="email">Email </label>
-											<input type="email" class="form-control" name="email" id="email" placeholder="Email">
-										</div>
-									</div>
-									<div class="col-md-12">
-										<div class="form-group">
-											<label class="label" for="telp">Telpon</label>
-											<input type="text" class="form-control" name="telp" id="telp" placeholder="Subject">
-										</div>
-									</div>
-									<!-- <div class="col-md-12">
-										<div class="form-group">
-											<label class="label" for="#">Pesan</label>
-											<textarea name="message" class="form-control" id="message" cols="30" rows="4" placeholder="Message"></textarea>
-										</div>
-									</div> -->
-									<div class="col-md-12">
-										<div class="form-group">
-											<label class="label" for="#">Metode Pembayaran</label>
-											<div class="d-block my-3">
-												<div class="custom-control custom-radio">
-													<input id="credit" name="metode_pembayaran" value="1" type="radio" class="custom-control-input" checked="" required="">
-													<label class="custom-control-label" for="credit">BRI</label>
-												</div>
-												<div class="custom-control custom-radio">
-													<input id="debit" name="metode_pembayaran" value="2" type="radio" class="custom-control-input" required="">
-													<label class="custom-control-label" for="debit">MANDIRI</label>
-												</div>
-												<div class="custom-control custom-radio">
-													<input id="paypal" name="metode_pembayaran" value="3" type="radio" class="custom-control-input" required="">
-													<label class="custom-control-label" for="paypal">Muamalat</label>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-12">
-										<div class="form-group">
-											<input type="submit" value="Lanjutkan Ke Pembayaran" class="btn btn-primary">
-											<div class="submitting"></div>
+									<div class="col-md-6">
+										<div class="card-body">
+											<h6 class="card-title"><?php echo $r['nama_ruangan'] ?></h6>
+											<p class="card-text"><?php echo $r['alamat'] ?></p>
 										</div>
 									</div>
 								</div>
-							</form>
+								<ul class="list-group mb-3">
+									<li class="list-group-item d-flex justify-content-between lh-condensed">
+										<div>
+											<p class="my-0">Tanggal Sewa</p>
+										</div>
+										<div class="row ">
+											<p><?php echo $tgl_sewa; ?></p>
+
+										</div>
+									</li>
+									<li class="list-group-item d-flex justify-content-between lh-condensed">
+										<div>
+											<p class="my-0">Waktu</p>
+										</div>
+										<div class="row ">
+											<p>jam 09.00 - 16.00 WIB</p>
+
+										</div>
+									</li>
+									<li class="list-group-item d-flex justify-content-between lh-condensed">
+										<div>
+											<p class="my-0">Nama Pemesan</p>
+										</div>
+										<div class="row ">
+											<p><?php echo $name; ?></p>
+										</div>
+									</li>
+									<li class="list-group-item d-flex justify-content-between lh-condensed">
+										<div>
+											<p class="my-0">Tamu</p>
+										</div>
+										<div class="row ">
+											<p>Max <?php echo $r['kapasitas']; ?> orang</p>
+										</div>
+									</li>
+
+								</ul>
+							</div>
 						</div>
 
 					</div>
