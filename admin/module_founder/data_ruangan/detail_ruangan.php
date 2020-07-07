@@ -86,6 +86,10 @@
                                     </p>
 
                                  </address>
+                                 <address>
+                                    <p class="font-weight-bold">Harga</p>
+                                    <p>Rp.<?php echo $pro['harga']; ?></p>
+                                 </address>
                               </div>
                            </div>
                         </div>

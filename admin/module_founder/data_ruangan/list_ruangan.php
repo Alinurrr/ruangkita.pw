@@ -26,6 +26,7 @@
                    <th> Nama Ruangan </th>
                    <th> Gambar </th>
                    <th> Alamat </th>
+                   <th> Harga </th>
                    <th style="width: 80px"> Aksi </th>
                  </tr>
                </thead>
@@ -51,6 +52,11 @@
                         }
                         ?>
                        <!-- <?php echo $pro['alamat']; ?> -->
+                     </td>
+                     <td>
+
+                       <?= $pro['harga']; ?>
+
                      </td>
                      <td>
 

@@ -6,96 +6,91 @@ $q = mysqli_query($koneksi, "SELECT * FROM tb_ruangan r, tb_user u WHERE r.id_fo
 while ($r = mysqli_fetch_array($q)) {
 ?>
 
-
 	<section class="ftco-section bg-light">
 		<div class="container">
-			<div class="row no-gutters">
-				<div class="col-md-6 wrap-about">
+			<div class="card">
+				<h5 class="card-header">Pesanan Anda</h5>
+				<div class="card-body">
+					<p class="card-text">Lanjutkan sebagai tamu di bawah. Anda bisa masuk dengan akun RuangKita untuk kemudahan akses dan lainnya.</p>
+					<a href="admin/" class="btn btn-primary">Masuk</a>
+				</div>
+			</div>
+
+			<div class="row mt-3 no-gutters">
+				<div class="col-md-6 mr-5 wrap-about">
 					<div class="img img-2 mb-4" style="background-image: url(admin/upload/<?php echo $r['gambar'] ?>);">
 					</div>
 				</div>
-				<div class="col-md-6 wrap-about ftco-animate">
+				<div class="col-md-5 wrap-about ftco-animate">
 
-					<div class="heading-section">
-						<div class="pl-md-5">
-							<h2 align="center" class="mb-2"><?php echo ($r['nama_ruangan']) ?></h2>
-							<h4 align="center">
-								<font color="#fa6e83"><b>Founder : <?php echo ($r['nama']) ?></b></font>
-							</h4>
-							<h6 align="center"><i><?php echo ($r['deskripsi']) ?></i></h6>
+					<div class="row no-gutters">
+						<div class="contact-wrap w-100 p-md-5 p-4">
+							<h3 class="mb-4" align="center"> Data Kontak Pemesan</h3>
+							<div id="form-message-warning" class="mb-4"></div>
+							<div id="form-message-success" class="mb-4">
+
+							</div>
+							<form method="POST" id="contactForm" name="contactForm" class="contactForm">
+								<div class="row">
+									<div class="col-md-12">
+										<div class="form-group">
+											<label class="label" for="name">Nama Lengkap</label>
+											<input type="text" class="form-control" name="name" id="name" placeholder="Name">
+										</div>
+									</div>
+									<div class="col-md-12">
+										<div class="form-group">
+											<label class="label" for="email">Email </label>
+											<input type="email" class="form-control" name="email" id="email" placeholder="Email">
+										</div>
+									</div>
+									<div class="col-md-12">
+										<div class="form-group">
+											<label class="label" for="subject">Telpon</label>
+											<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
+										</div>
+									</div>
+									<!-- <div class="col-md-12">
+										<div class="form-group">
+											<label class="label" for="#">Pesan</label>
+											<textarea name="message" class="form-control" id="message" cols="30" rows="4" placeholder="Message"></textarea>
+										</div>
+									</div> -->
+									<div class="col-md-12">
+										<div class="form-group">
+											<label class="label" for="#">Metode Pembayaran</label>
+											<div class="d-block my-3">
+												<div class="custom-control custom-radio">
+													<input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked="" required="">
+													<label class="custom-control-label" for="credit">Credit card</label>
+												</div>
+												<div class="custom-control custom-radio">
+													<input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required="">
+													<label class="custom-control-label" for="debit">Debit card</label>
+												</div>
+												<div class="custom-control custom-radio">
+													<input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required="">
+													<label class="custom-control-label" for="paypal">PayPal</label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-12">
+										<div class="form-group">
+											<input type="submit" value="Booking" class="btn btn-primary">
+											<div class="submitting"></div>
+										</div>
+									</div>
+								</div>
+							</form>
 						</div>
-					</div>
-					<div class="heading-section">
-						<div class="pl-md-5">
-							<h2 align="center" class="mb-2">Detail Ruangan</h2><br>
-							<h4 class="heading">Alamat</h4>
-							<p><?php echo ($r['alamat']) ?></p>
-						</div>
-					</div>
-					<div class="pl-md-5">
-						<div class="row">
-							<div class="services-2 col-lg-6 d-flex w-100">
-								<div class="icon d-flex justify-content-center align-items-center">
-									<span class="flaticon-diet"></span>
-								</div>
-								<div class="media-body pl-3">
-									<h3 class="heading">Tipe</h3>
-									<p> <?php
 
-											if ($r['jenis_ruangan'] == 'R01') {
-												echo "Gedung";
-											} elseif ($r['jenis_ruangan'] == 'R02') {
-												echo "Kafe";
-											} elseif ($r['jenis_ruangan'] == 'R03') {
-												echo "Pegunungan";
-											} elseif ($r['jenis_ruangan'] == 'R04') {
-												echo "Pedesaan";
-											} elseif ($r['jenis_ruangan'] == 'R05') {
-												echo "Pesisir Pantai";
-											}
-
-											?></p>
-								</div>
-							</div>
-							<div class="services-2 col-lg-6 d-flex w-100">
-								<div class="icon d-flex justify-content-center align-items-center">
-									<span class="flaticon-workout"></span>
-								</div>
-								<div class="media-body pl-3">
-									<h3 class="heading">Ukuran</h3>
-									<p><?php echo ($r['ukuran']) ?> M2</p>
-								</div>
-							</div>
-							<div class="services-2 col-lg-6 d-flex w-100">
-								<div class="icon d-flex justify-content-center align-items-center">
-									<span class="flaticon-diet-1"></span>
-								</div>
-								<div class="media-body pl-3">
-									<h3 class="heading">Kapasitas</h3>
-									<p><?php echo ($r['kapasitas']) ?> Orang</p>
-								</div>
-							</div>
-							<div class="services-2 col-lg-6 d-flex w-100">
-								<div class="icon d-flex justify-content-center align-items-center">
-									<span class="flaticon-first"></span>
-								</div>
-								<div class="media-body pl-3">
-									<h3 class="heading">Harga</h3>
-									<p>Rp. 999999 /hari</p>
-								</div>
-							</div>
-
-						</div>
 					</div>
+
+
 				</div>
 			</div>
 
-
-			<div class="row no-gutters">
-				<div class="col-md-12 wrap-about">
-					<a href="<?php echo $base_url; ?>index_booking.php?id_ruangan=<?php echo $r['id_ruangan']; ?>" class="btn btn-primary btn-lg btn-block">Booking Ruangan</a>
-				</div>
-			</div>
 		</div>
 		</div>
 	</section>

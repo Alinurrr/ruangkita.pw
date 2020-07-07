@@ -11,48 +11,118 @@
 
         <div class="col-md-8">
           <div><img src="admin/upload/<?php echo $r['gambar'] ?>" height="460" width="860"></div>
-        </div>
-        <div class="col-md-4 p-4 p-md-5 bg-white">
-          <h2 class="font-weight-bold mb-4">Detail Ruangan</h2><br>
+
+
+
+
+          <h2 class="font-weight-bold mt-3">Detail Ruangan</h2>
           <span>
             <font color="#fa6e83"><b> Nama Ruangan : </b></font>
           </span>
-          <h6><?php echo ($r['nama_ruangan']) ?></h6> <br>
+          <h3><?php echo ($r['nama_ruangan']) ?></h3> <br>
 
-          <p><span>
-              <font color="#fa6e83"><b> Tipe: </b></font>
-            </span>
-            <?php
+          <div class="heading-section">
+            <div class="pl-md-5">
+              <h4 class="heading">Alamat</h4>
+              <p><?php echo ($r['alamat']) ?></p>
+            </div>
+          </div>
+          <div class="pl-md-5">
+            <div class="row">
+              <div class="services-2 col-lg-6 d-flex w-100">
+                <div class="icon d-flex justify-content-center align-items-center">
+                  <span class="flaticon-diet"></span>
+                </div>
+                <div class="media-body pl-3">
+                  <h3 class="heading">Tipe</h3>
+                  <p> <?php
 
-            if ($r['jenis_ruangan'] == 'R01') {
-              echo "Gedung";
-            } elseif ($r['jenis_ruangan'] == 'R02') {
-              echo "Kafe";
-            } elseif ($r['jenis_ruangan'] == 'R03') {
-              echo "Pegunungan";
-            } elseif ($r['jenis_ruangan'] == 'R04') {
-              echo "Pedesaan";
-            } elseif ($r['jenis_ruangan'] == 'R05') {
-              echo "Pesisir Pantai";
-            }
+                      if ($r['jenis_ruangan'] == 'R01') {
+                        echo "Gedung";
+                      } elseif ($r['jenis_ruangan'] == 'R02') {
+                        echo "Kafe";
+                      } elseif ($r['jenis_ruangan'] == 'R03') {
+                        echo "Pegunungan";
+                      } elseif ($r['jenis_ruangan'] == 'R04') {
+                        echo "Pedesaan";
+                      } elseif ($r['jenis_ruangan'] == 'R05') {
+                        echo "Pesisir Pantai";
+                      }
 
-            ?><br>
-            <span>
-              <font color="#fa6e83"><b> ukuran: </b></font>
-            </span> <?php echo ($r['ukuran']) ?> m2<br>
-            <span>
-              <font color="#fa6e83"><b> kapasitas: </b></font>
-            </span> <?php echo ($r['kapasitas']) ?> orang <br>
-            <span>
-              <font color="#fa6e83"><b> alamat: </b></font>
-            </span> <?php echo ($r['alamat']) ?><br>
-            <span>
-              <font color="#fa6e83"><b> deskripsi: </b></font>
-            </span> <?php echo ($r['deskripsi']) ?>
-          </p>
+                      ?></p>
+                </div>
+              </div>
+              <div class="services-2 col-lg-6 d-flex w-100">
+                <div class="icon d-flex justify-content-center align-items-center">
+                  <span class="flaticon-workout"></span>
+                </div>
+                <div class="media-body pl-3">
+                  <h3 class="heading">Ukuran</h3>
+                  <p><?php echo ($r['ukuran']) ?> M2</p>
+                </div>
+              </div>
+              <div class="services-2 col-lg-6 d-flex w-100">
+                <div class="icon d-flex justify-content-center align-items-center">
+                  <span class="flaticon-diet-1"></span>
+                </div>
+                <div class="media-body pl-3">
+                  <h3 class="heading">Kapasitas</h3>
+                  <p><?php echo ($r['kapasitas']) ?> Orang</p>
+                </div>
+              </div>
+              <div class="services-2 col-lg-6 d-flex w-100">
+                <div class="icon d-flex justify-content-center align-items-center">
+                  <span class="flaticon-first"></span>
+                </div>
+                <div class="media-body pl-3">
+                  <h3 class="heading">Harga</h3>
+                  <p>Rp. 999999 /hari</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="heading-section">
+            <div class="pl-md-5">
+              <h4 class="heading">Deskripsi</h4>
+              <p><?php echo ($r['deskripsi']) ?></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 p-2 p-md-4 bg-white">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-muted">Full Day</span>
+          </h4>
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Harga Sewa</h6>
+                <small class="text-muted">jam 09.00 - 16.00 WIB</small>
+              </div>
+              <div class="row mt-3">
+                <h6>Rp.999.999</h6>
+              </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <h6 class="my-0">Tanggal Sewa</h6>
+              <div class="form-group row">
+                <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+              </div>
+            </li>
+          </ul>
+
+          <form class="card p-2">
+
+            <div class="input-group-append">
+              <a href="<?php echo $base_url; ?>index_booking.php?id_ruangan=<?php echo $r['id_ruangan']; ?>" class="btn btn-primary btn-lg btn-block">Booking Ruangan</a>
+            </div>
+
+          </form>
+
         </div>
       <?php } ?>
-      <div class="col-md-12">
+      <div class="col-md-6">
         <div class="wrapper">
           <div class="row no-gutters">
             <div class="col-lg-8 col-md-7 d-flex align-items-stretch">
