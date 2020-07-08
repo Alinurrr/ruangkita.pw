@@ -111,7 +111,12 @@ $user = mysqli_fetch_array($queryAdmin);
 							<a class="dropdown-item" href="admin/logout.php">Sign Out<i class="dropdown-item-icon ti-power-off"></i></a>
 						</div>
 					</li>
-					<li class="nav-item"><a href="<?= $admin_url; ?>adminfounder.php?module=home" class="nav-link"><i class="fa fa-home" aria-hidden="true"></i> </a></li>
+					<?php
+					if ($user['status'] == 1) { ?>
+						<li class="nav-item"><a href="<?= $admin_url; ?>adminfounder.php?module=home" class="nav-link"><i class="fa fa-home" aria-hidden="true"></i> </a></li>
+					<?php } elseif ($user['status'] == 2) { ?>
+						<li class="nav-item"><a href="<?= $admin_url; ?>adminfounder.php?module=home" class="nav-link"><i class="fa fa-home" aria-hidden="true"></i> </a></li>
+					<?php } ?>
 
 					<!-- <li class="nav-item"><a href="asset/services.html" class="nav-link">Services</a></li>
 					<li class="nav-item"><a href="asset/rooms.html" class="nav-link">Ruang Meeting</a></li>

@@ -61,20 +61,24 @@ while ($r = mysqli_fetch_array($q)) {
 									</div> -->
 									<div class="col-md-12">
 										<div class="form-group">
-											<label class="label" for="#">Metode Pembayaran</label>
 											<div class="d-block my-3">
-												<div class="custom-control custom-radio">
-													<input id="credit" name="metode_pembayaran" value="1" type="radio" class="custom-control-input" checked="" required="">
-													<label class="custom-control-label" for="credit">BRI</label>
-												</div>
-												<div class="custom-control custom-radio">
-													<input id="debit" name="metode_pembayaran" value="2" type="radio" class="custom-control-input" required="">
-													<label class="custom-control-label" for="debit">MANDIRI</label>
-												</div>
-												<div class="custom-control custom-radio">
-													<input id="paypal" name="metode_pembayaran" value="3" type="radio" class="custom-control-input" required="">
-													<label class="custom-control-label" for="paypal">Muamalat</label>
-												</div>
+												<label class="label" for="#">Metode Pembayaran</label>
+												<select class="custom-select" name="metode_pembayaran" id="inputGroupSelect01">
+													<?php
+
+													$QueryFounder = mysqli_query($koneksi, "SELECT * FROM tb_pembayaran");
+													while ($pro = mysqli_fetch_array($QueryFounder)) {
+													?>
+
+														<option value="<?php echo $pro['id_pembayaran']; ?>"><?php echo $pro['metode_pembayaran']; ?></option>
+
+														<!-- <div class="custom-control custom-radio">
+															<input id="credit" name="metode_pembayaran" value="<?php echo $pro['id_pembayaran']; ?>" type="radio" checked="checked" class="custom-control-input" required="">
+															<label class="custom-control-label" for="credit"><?php echo $pro['metode_pembayaran']; ?></label>
+														</div> -->
+
+													<?php } ?>
+												</select>
 											</div>
 										</div>
 									</div>

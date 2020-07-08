@@ -236,7 +236,7 @@ if (!isset($_SESSION['email']) and !isset($_SESSION['password'])) {
               <li class="nav-item">
                 <a class="nav-link" href="adminweb.php?module=list_pesanan">
                   <i class="menu-icon typcn typcn-shopping-bag"></i>
-                  <span class="menu-title">Aktivitas</span>
+                  <span class="menu-title">Aktivitas Pemesanan</span>
                 </a>
               </li>
               <li class="nav-item">

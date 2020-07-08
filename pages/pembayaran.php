@@ -20,12 +20,13 @@ while ($r = mysqli_fetch_array($q)) {
 					<h4 class="d-flex justify-content-between align-items-center mb-3">
 						<span class="text-muted">Rincian Harga</span>
 					</h4>
-					<form class="card p-2" action="aksi_bayar.php" method="POST">
+					<form class="card p-2" action="index_konfirmasi.php" method="POST">
 						<input type="hidden" name="id_ruangan" value="<?php echo $r['id_ruangan']; ?>">
 						<input type="hidden" name="tgl_sewa" value="<?php echo $tgl_sewa; ?>">
 						<input type="hidden" name="name" value="<?php echo $name; ?>">
 						<input type="hidden" name="email" value="<?php echo $email; ?>">
 						<input type="hidden" name="telp" value="<?php echo $telp; ?>">
+						<input type="hidden" name="harga" value="<?php echo $r['harga']; ?>">
 						<input type="hidden" name="metode_pembayaran" value="<?php echo $metode_pembayaran; ?>">
 						<ul class="list-group mb-3">
 							<li class="list-group-item d-flex justify-content-between lh-condensed">
@@ -112,6 +113,22 @@ while ($r = mysqli_fetch_array($q)) {
 										</div>
 										<div class="row ">
 											<p><?php echo $name; ?></p>
+										</div>
+									</li>
+									<li class="list-group-item d-flex justify-content-between lh-condensed">
+										<div>
+											<p class="my-0">Email Pemesan</p>
+										</div>
+										<div class="row ">
+											<p><?php echo $email; ?></p>
+										</div>
+									</li>
+									<li class="list-group-item d-flex justify-content-between lh-condensed">
+										<div>
+											<p class="my-0">Nomor Telephone Pemesan</p>
+										</div>
+										<div class="row ">
+											<p><?php echo $telp; ?></p>
 										</div>
 									</li>
 									<li class="list-group-item d-flex justify-content-between lh-condensed">

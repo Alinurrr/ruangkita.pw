@@ -8,5 +8,6 @@ if (!isset($_SESSION['email']) and !isset($_SESSION['password'])) {
 } else {
    include "template/header_login.php";
 }
+include "aksi_bayar.php";
 include "pages/konfirmasi_ruangan.php";
 include "template/footer.php";

@@ -14,14 +14,12 @@
 
 
 
-
-          <h2 class="font-weight-bold mt-3">Detail Ruangan</h2>
+          <h2 class="foZnt-weight-bold mt-3"><?php echo ($r['nama_ruangan']) ?></h2>
           <span>
-            <font color="#fa6e83"><b> Nama Ruangan : </b></font>
+            <font color="#fa6e83"><b><?php echo ($r['nama']) ?></b></font>
           </span>
-          <h3><?php echo ($r['nama_ruangan']) ?></h3> <br>
 
-          <div class="heading-section">
+          <div class="heading-section mt-3">
             <div class="pl-md-5">
               <h4 class="heading">Alamat</h4>
               <p><?php echo ($r['alamat']) ?></p>
@@ -109,7 +107,7 @@
               <li class="list-group-item d-flex justify-content-between lh-condensed">
                 <h6 class="my-0">Tanggal Sewa</h6>
                 <div class="form-group row">
-                  <input class="form-control" name="tgl_sewa" type="date" value="<?php echo date('y/ m/ d'); ?>" id="example-date-input">
+                  <input class="form-control" name="tgl_sewa" type="date" required id="example-date-input">
                 </div>
               </li>
               <li class="list-group-item d-flex justify-content-between lh-condensed">

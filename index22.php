@@ -1,13 +1,11 @@
 <?php
-
 include "lib/config.php";
 include "lib/koneksi.php";
 session_start();
 if (!isset($_SESSION['email']) and !isset($_SESSION['password'])) {
-	header('Location: index.php');
+   include "template/header.php";
 } else {
-
-include "template/header_login.php";
-include "pages/main.php";
-include "template/footer.php";
+   include "template/header_login.php";
 }
+include "pages/konfirmasi_ruangan.php";
+include "template/footer.php";

@@ -4,7 +4,7 @@
       <div class="row no-gutters">
          <?php
 
-         $q = mysqli_query($koneksi, "SELECT * FROM tb_ruangan order by id_ruangan desc limit 6");
+         $q = mysqli_query($koneksi, "SELECT * FROM tb_ruangan ");
 
          while ($r = mysqli_fetch_array($q)) {
          ?>
