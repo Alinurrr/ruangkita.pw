@@ -67,6 +67,8 @@ $user = mysqli_fetch_array($queryAdmin);
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
 					<li class="nav-item"><a href="index_daftar_ruangan.php" class="nav-link">Daftar Ruangan</a></li>
+
+
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							Kategori
@@ -79,9 +81,15 @@ $user = mysqli_fetch_array($queryAdmin);
 							<a class="dropdown-item" href="#">Pesisir Laut</a>
 						</div>
 					</li>
+
+
+
+
+
+
+
 					<li class="nav-item dropdown d-none d-xl-inline-block user-dropdown">
 						<a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-
 							<?= $user['nama'];  ?>
 							<img class="img-xs rounded-circle" height="30" src="admin/assets/images/faces/face00.jpg" alt="Profile image"> </a>
 						<div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
@@ -91,12 +99,20 @@ $user = mysqli_fetch_array($queryAdmin);
 								<p class="font-weight-light text-muted mb-0"><?= $user['email'];  ?></p>
 							</div>
 							<a class="dropdown-item">My Profile <i class="dropdown-item-icon ti-dashboard"></i></a>
-							<a class="dropdown-item">Messages<i class="dropdown-item-icon ti-comment-alt"></i></a>
-							<a class="dropdown-item">Activity<i class="dropdown-item-icon ti-location-arrow"></i></a>
-							<a class="dropdown-item">FAQ<i class="dropdown-item-icon ti-help-alt"></i></a>
+							<?php
+							if ($user['status'] == 1) { ?>
+								<a href="<?= $admin_url; ?>adminweb.php?module=home" class="dropdown-item">Dashboard Admin <i class="dropdown-item-icon ti-dashboard"></i></a>
+							<?php } elseif ($user['status'] == 2) { ?>
+								<a href="<?= $admin_url; ?>adminfounder.php?module=home" class="dropdown-item">RuangKu <i class="dropdown-item-icon ti-dashboard"></i></a>
+
+							<?php } ?>
+
+
 							<a class="dropdown-item" href="admin/logout.php">Sign Out<i class="dropdown-item-icon ti-power-off"></i></a>
 						</div>
 					</li>
+					<li class="nav-item"><a href="<?= $admin_url; ?>adminfounder.php?module=home" class="nav-link"><i class="fa fa-home" aria-hidden="true"></i> </a></li>
+
 					<!-- <li class="nav-item"><a href="asset/services.html" class="nav-link">Services</a></li>
 					<li class="nav-item"><a href="asset/rooms.html" class="nav-link">Ruang Meeting</a></li>
 					<li class="nav-item"><a href="asset/contact.html" class="nav-link">Contact</a></li>

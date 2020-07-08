@@ -196,8 +196,14 @@ if (!isset($_SESSION['email']) and !isset($_SESSION['password'])) {
                   <i class="menu-icon typcn typcn-document-text"></i>
                   <span class="menu-title">Dashboard</span>
                 </a>
-                <!-- </li>
-            <li class="nav-item">
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="<?= $base_url; ?>">
+                  <i class="menu-icon typcn typcn-document-text"></i>
+                  <span class="menu-title">Halaman Depan</span>
+                </a>
+              </li>
+              <!-- <li class="nav-item">
               <a class="nav-link" href="adminweb.php?module=list_admin">
                 <i class="menu-icon typcn typcn-document-text"></i>
                 <span class="menu-title">Admin</span>

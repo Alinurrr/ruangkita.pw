@@ -208,6 +208,12 @@ if (!isset($_SESSION['email']) and !isset($_SESSION['password'])) {
                 </a>
               </li>
               <li class="nav-item">
+                <a class="nav-link" href="<?= $base_url; ?>">
+                  <i class="menu-icon typcn typcn-document-text"></i>
+                  <span class="menu-title">Halaman Depan</span>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" href="adminfounder.php?module=list_ruangan">
                   <i class="menu-icon typcn typcn-shopping-bag"></i>
                   <span class="menu-title">Data Ruangan</span>
