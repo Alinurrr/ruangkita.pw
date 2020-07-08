@@ -240,6 +240,12 @@ if (!isset($_SESSION['email']) and !isset($_SESSION['password'])) {
                 </a>
               </li>
               <li class="nav-item">
+                <a class="nav-link" href="adminweb.php?module=list_pembayaran">
+                  <i class="menu-icon typcn typcn-th-large-outline"></i>
+                  <span class="menu-title">Metode Pembayaran</span>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" href="adminweb.php?module=list_Testimoni">
                   <i class="menu-icon typcn typcn-th-large-outline"></i>
                   <span class="menu-title">Testimoni</span>
@@ -323,11 +329,20 @@ if (!isset($_SESSION['email']) and !isset($_SESSION['password'])) {
             include "module/pesanan_admin/list_pesanan.php";
           }
 
+
+          // module pembayaran
+          elseif ($_GET['module'] == 'list_pembayaran') {
+            include "module/data_pembayaran/list_pembayaran.php";
+          } elseif ($_GET['module'] == 'edit_pembayaran') {
+            include "module/data_pembayaran/form_edit.php";
+          } elseif ($_GET['module'] == 'tambah_pembayaran') {
+            include "module/data_pembayaran/form_tambah.php";
+          }
+
           // module testimoni
           elseif ($_GET['module'] == 'list_Testimoni') {
             include "module/data_testimoni/list_Testimoni.php";
           }
-
           // ?? //
           else {
             include "module/home/home.php";
