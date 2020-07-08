@@ -24,6 +24,7 @@
                <thead>
                  <tr>
                    <th> Nama Ruangan </th>
+                   <th> Id </th>
                    <th> Gambar </th>
                    <th> Alamat </th>
                    <th> Harga </th>
@@ -39,13 +40,14 @@
                   ?>
                    <tr>
                      <td><?php echo $pro['nama_ruangan']; ?></td>
+                     <td><?php echo $pro['id_ruangan']; ?></td>
                      <td>
                        <img src="upload/<?= $pro['gambar']; ?>" class="thumb-image" height="100" width="100">
                      </td>
                      <td>
                        <?php
                         if (str_word_count($pro['alamat']) > 1) {
-                          $potongan = substr($pro['alamat'], 0, 80) . "[..]";
+                          $potongan = substr($pro['alamat'], 0, 50) . "[..]";
                           echo $potongan;
                         } else {
                           echo $pro['alamat'];

@@ -288,31 +288,7 @@ if (!isset($_SESSION['email']) and !isset($_SESSION['password'])) {
           if ($_GET['module'] == 'home') {
             include "module/home/home.php";
           }
-          // bagian blank page //
-          elseif ($_GET['module'] == 'list_admin') {
-            include "module/data_admin/list_admin.php";
-          } elseif ($_GET['module'] == 'tambah_admin') {
-            include "module/data_admin/tambah_admin.php";
-          } elseif ($_GET['module'] == 'form_edit') {
-            include "module/data_admin/form_edit.php";
-          } elseif ($_GET['module'] == 'list_founder') {
-            include "module/data_founder/list_founder.php";
-          } elseif ($_GET['module'] == 'list_customer') {
-            include "module/data_customer/list_customer.php";
-          } elseif ($_GET['module'] == 'list_pesanan') {
-            include "module/pesanan_admin/list_pesanan.php";
-          }
 
-          // moudule ruangan
-          elseif ($_GET['module'] == 'list_ruangan_admin') {
-            include "module/data_ruangan/list_ruangan_admin.php";
-          } elseif ($_GET['module'] == 'detail_ruangan_admin') {
-            include "module/data_ruangan/detail_ruangan_admin.php";
-          }
-          // module testimoni
-          elseif ($_GET['module'] == 'list_Testimoni') {
-            include "module/data_testimoni/list_Testimoni.php";
-          }
 
           // module user
           elseif ($_GET['module'] == 'list_user') {
@@ -329,7 +305,22 @@ if (!isset($_SESSION['email']) and !isset($_SESSION['password'])) {
             include "module/data_user/form_edit.php";
           }
 
+          // moudule ruangan
+          elseif ($_GET['module'] == 'list_ruangan_admin') {
+            include "module/data_ruangan/list_ruangan_admin.php";
+          } elseif ($_GET['module'] == 'detail_ruangan_admin') {
+            include "module/data_ruangan/detail_ruangan_admin.php";
+          }
 
+          // module pesanan
+          elseif ($_GET['module'] == 'list_pesanan') {
+            include "module/pesanan_admin/list_pesanan.php";
+          }
+
+          // module testimoni
+          elseif ($_GET['module'] == 'list_Testimoni') {
+            include "module/data_testimoni/list_Testimoni.php";
+          }
 
           // ?? //
           else {

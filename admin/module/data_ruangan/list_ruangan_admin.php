@@ -34,6 +34,7 @@ include "../lib/koneksi.php";
                 <tr>
                   <th> Nomor </th>
                   <th> Nama Ruangan </th>
+                  <th> Id </th>
                   <th> Gambar </th>
                   <th> Pemilik </th>
                   <th style="width: 80px"> Aksi </th>
@@ -51,6 +52,7 @@ include "../lib/koneksi.php";
                     <td><?php echo $nomor; ?></td>
                     <?php $nomor++ ?>
                     <td><?php echo $pro['nama_ruangan']; ?></td>
+                    <td><?php echo $pro['id_ruangan']; ?></td>
                     <td>
                       <img src="upload/<?= $pro['gambar']; ?>" class="img" height="100" width="100">
                     </td>
