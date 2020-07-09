@@ -98,7 +98,7 @@ $user = mysqli_fetch_array($queryAdmin);
 								<p class="mb-1 mt-3 font-weight-semibold"><?= $user['nama'];  ?></p>
 								<p class="font-weight-light text-muted mb-0"><?= $user['email'];  ?></p>
 							</div>
-							<a class="dropdown-item">My Profile <i class="dropdown-item-icon ti-dashboard"></i></a>
+							<a href="<?= $base_url; ?>index_profile.php" class="dropdown-item">My Profile <i class="dropdown-item-icon ti-dashboard"></i></a>
 							<?php
 							if ($user['status'] == 1) { ?>
 								<a href="<?= $admin_url; ?>adminweb.php?module=home" class="dropdown-item">Dashboard Admin <i class="dropdown-item-icon ti-dashboard"></i></a>
