@@ -53,7 +53,7 @@ while ($r = mysqli_fetch_array($q)) {
 										<div class="col-md-12">
 											<div class="form-group">
 												<label class="label" for="telp">Telpon</label>
-												<input type="text" class="form-control" name="telp" id="telp" placeholder="Subject">
+												<input type="text" class="form-control" name="telp" id="telp" placeholder="Subject" required>
 											</div>
 										</div>
 										<!-- <div class="col-md-12">

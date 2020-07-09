@@ -10,10 +10,12 @@
              <h3>Data Aktivitas</h3>
              <hr>
              <br>
-             <table class="table table-striped">
+             <table class="table table-responsive">
                <thead>
                  <tr>
+                   <th> ID Pesanan </th>
                    <th> Pemesan </th>
+                   <th> Email Pemesan </th>
                    <th> Tanggal Sewa</th>
                    <th> Nama Ruangan </th>
                    <th> Pemilik Ruangan</th>
@@ -29,11 +31,13 @@
                   $QueryPesan = mysqli_query($koneksi, "SELECT * FROM tb_pemesanan pm, tb_ruangan r, tb_user u , tb_pembayaran pb
                                                                  WHERE pm.id_ruangan = r.id_ruangan 
                                                                  AND r.id_founder = u.id_user
-                                                                 AND pm.id_metode_pembayaran = pb.id_pembayaran");
+                                                                 AND pm.id_metode_pembayaran = pb.id_pembayaran order by id_pesanan desc");
                   while ($pro = mysqli_fetch_array($QueryPesan)) {
                   ?>
                    <tr>
+                     <td>RK<?php echo $pro['id_pesanan']; ?></td>
                      <td><?php echo $pro['nama_pemesan']; ?></td>
+                     <td><?php echo $pro['email_pemesan']; ?></td>
                      <td><?php echo $pro['tanggal_sewa']; ?></td>
                      <td><?php echo $pro['nama_ruangan']; ?></td>
                      <td><?php echo $pro['nama']; ?></td>
@@ -52,6 +56,8 @@
                        <?php } ?>
                      </td>
                      <td>
+                       <a href="<?php echo $admin_url; ?>adminweb.php?module=edit_status_pemesanan&id_pesanan=<?php echo $pro['id_pesanan']; ?>" class="btn btn-icons btn-inverse-primary">
+                         <i class="mdi mdi-file-document"></i></button></a>
                        <a href="<?php echo $admin_url; ?>module/pesanan_admin/aksi_hapus.php?id_pesanan=<?php echo $pro['id_pesanan']; ?>" class="btn btn-icons btn-inverse-warning">
                          <i class="mdi mdi-alert-outline"></i></button></a>
                      </td>

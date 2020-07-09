@@ -322,6 +322,8 @@ if (!isset($_SESSION['email']) and !isset($_SESSION['password'])) {
           // module pesanan
           elseif ($_GET['module'] == 'list_pesanan') {
             include "module/pesanan_admin/list_pesanan.php";
+          } elseif ($_GET['module'] == 'edit_status_pemesanan') {
+            include "module/pesanan_admin/form_edit_status.php";
           }
 
 

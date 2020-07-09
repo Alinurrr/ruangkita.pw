@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>RungKita - Tempat Cari Ruang Meeting Terasik</title>
+	<title>RuangKita - Tempat Cari Ruang Meeting Terasik</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
