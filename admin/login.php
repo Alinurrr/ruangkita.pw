@@ -18,13 +18,7 @@ if ($ketemu > 0) {
     $hasilQuery = mysqli_fetch_array($queryAdmin);
     $status = $hasilQuery['status'];
 
-    if ($status == 1) {
-        header('location:adminweb.php?module=home');
-    } else if ($status == 2) {
-        header('location:adminfounder.php?module=home');
-    } else {
-        header('Location: ../index.php');
-    }
+    header('Location: ../index.php');
 } else {
     echo "<center>LOGIN GAGAL! <br>
         Email atau password anda tidak benar. <br>

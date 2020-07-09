@@ -252,12 +252,6 @@ if (!isset($_SESSION['email']) and !isset($_SESSION['password'])) {
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <i class="menu-icon typcn typcn-bell"></i>
-                  <span class="menu-title">Laporan</span>
-                </a>
-              </li>
-              <li class="nav-item">
                 <a class="nav-link" href="logout.php">
                   <i class="menu-icon typcn typcn-bell"></i>
                   <span class="menu-title">Logout</span>
