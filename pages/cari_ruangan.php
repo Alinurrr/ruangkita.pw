@@ -170,32 +170,41 @@
         $ukuran = $_POST['ukuran'];
         $kapasitas = $_POST['kapasitas'];
 
+        //jika data pencarian tidak diisi
+        if (empty($jenis_ruangan && $ukuran && $kapasitas)) {
+          $query = mysqli_query($koneksi, "SELECT * FROM tb_ruangan ");
+        }
+
+
+
         //pencarian 1 data
         if (!empty($jenis_ruangan)) {
           $query = mysqli_query($koneksi, "SELECT * FROM tb_ruangan WHERE jenis_ruangan = '$jenis_ruangan' ");
         }
         if (!empty($ukuran)) {
-          $query = mysqli_query($koneksi, "SELECT * FROM tb_ruangan WHERE ukuran = '$ukuran' ");
+          $query = mysqli_query($koneksi, "SELECT * FROM tb_ruangan WHERE ukuran >= '$ukuran' ");
         }
         if (!empty($kapasitas)) {
-          $query = mysqli_query($koneksi, "SELECT * FROM tb_ruangan WHERE kapasitas = '$kapasitas' ");
+          $query = mysqli_query($koneksi, "SELECT * FROM tb_ruangan WHERE kapasitas >= '$kapasitas' ");
         }
 
         //pencarian 2 data
         if (!empty($jenis_ruangan && $ukuran)) {
-          $query = mysqli_query($koneksi, "SELECT * FROM tb_ruangan WHERE jenis_ruangan = '$jenis_ruangan' AND ukuran = '$ukuran' ");
+          $query = mysqli_query($koneksi, "SELECT * FROM tb_ruangan WHERE jenis_ruangan = '$jenis_ruangan' AND ukuran >= '$ukuran' ");
         }
         if (!empty($jenis_ruangan && $kapasitas)) {
-          $query = mysqli_query($koneksi, "SELECT * FROM tb_ruangan WHERE jenis_ruangan = '$jenis_ruangan' AND kapasitas = '$kapasitas' ");
+          $query = mysqli_query($koneksi, "SELECT * FROM tb_ruangan WHERE jenis_ruangan = '$jenis_ruangan' AND kapasitas >= '$kapasitas' ");
         }
         if (!empty($kapasitas && $ukuran)) {
-          $query = mysqli_query($koneksi, "SELECT * FROM tb_ruangan WHERE ukuran = '$ukuran' AND kapasitas = '$kapasitas' ");
+          $query = mysqli_query($koneksi, "SELECT * FROM tb_ruangan WHERE ukuran >= '$ukuran' AND kapasitas >= '$kapasitas' ");
         }
 
         //pencarian 3 data
         if (!empty($jenis_ruangan && $ukuran && $kapasitas)) {
-          $query = mysqli_query($koneksi, "SELECT * FROM tb_ruangan WHERE jenis_ruangan = '$jenis_ruangan' AND ukuran = '$ukuran' AND kapasitas = '$kapasitas' ");
+          $query = mysqli_query($koneksi, "SELECT * FROM tb_ruangan WHERE jenis_ruangan = '$jenis_ruangan' AND ukuran >= '$ukuran' AND kapasitas >= '$kapasitas' ");
         }
+
+
 
         while ($r = mysqli_fetch_array($query)) {
         ?>
