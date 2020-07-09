@@ -197,12 +197,7 @@ if (!isset($_SESSION['email']) and !isset($_SESSION['password'])) {
                   <span class="menu-title">Dashboard</span>
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="<?= $base_url; ?>">
-                  <i class="menu-icon typcn typcn-document-text"></i>
-                  <span class="menu-title">Halaman Depan</span>
-                </a>
-              </li>
+
               <!-- <li class="nav-item">
               <a class="nav-link" href="adminweb.php?module=list_admin">
                 <i class="menu-icon typcn typcn-document-text"></i>
@@ -249,6 +244,12 @@ if (!isset($_SESSION['email']) and !isset($_SESSION['password'])) {
                 <a class="nav-link" href="adminweb.php?module=list_Testimoni">
                   <i class="menu-icon typcn typcn-th-large-outline"></i>
                   <span class="menu-title">Testimoni</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="<?= $base_url; ?>">
+                  <i class="menu-icon typcn typcn-document-text"></i>
+                  <span class="menu-title">Halaman RuangKita</span>
                 </a>
               </li>
               <li class="nav-item">
